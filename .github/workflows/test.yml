@@ -1,0 +1,29 @@
+name: Test
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  brew:
+    runs-on: macos-15
+    steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@1f8e202ffddf94def7f42f6fa3a482e821489f9c # 2026.07.10.1
+
+      - name: Clean the runner
+        run: brew test-bot --only-cleanup-before
+
+      - name: Set up the tap test
+        run: brew test-bot --only-setup
+
+      - name: Audit tap syntax
+        run: brew test-bot --only-tap-syntax
+
+      - name: Install and test changed Formulae
+        run: brew test-bot --only-formulae
