@@ -1,8 +1,8 @@
 class Sherpa < Formula
   desc "Local-first personal assistant for macOS"
   homepage "https://github.com/XIYO/plug-hole"
-  url "https://github.com/XIYO/plug-hole/releases/download/sherpa-v0.2.0/sherpa-v0.2.0-cli-macos-universal.tar.gz"
-  sha256 "7155a89afe3db7b01b687b94e367e3ab57de77f3108cab8bda0be1cf63522339"
+  url "https://github.com/XIYO/plug-hole/releases/download/sherpa-v0.2.1/sherpa-v0.2.1-cli-macos-universal.tar.gz"
+  sha256 "402e6dc84f3c5fdb9a1402ee970896719c72dc95b2b610c32649d1830f15f11f"
   license "MIT"
 
   depends_on macos: :sonoma
