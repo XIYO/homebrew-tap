@@ -2,7 +2,6 @@ class Sherpa < Formula
   desc "Local-first planning and context orchestrator for macOS"
   homepage "https://github.com/XIYO/sherpa"
   url "https://github.com/XIYO/sherpa/releases/download/v0.7.1/sherpa-0.7.1-aarch64-apple-darwin.tar.gz"
-  version "0.7.1"
   sha256 "70c4cb18b4e3ce3e58f92c88844a05a898cb17c7af5f3b3e6ba2812558aa7a48"
   license "MIT"
 
