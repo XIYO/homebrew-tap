@@ -27,15 +27,15 @@ The CLI and agent skills are installed separately. Choose your host.
 For Claude Code:
 
 ```bash
-claude plugin marketplace add https://github.com/XIYO/sherpa.git
-claude plugin install sherpa@sherpa
+claude plugin marketplace add https://github.com/XIYO/plug-hole.git
+claude plugin install sherpa@plug-hole
 ```
 
 For Codex:
 
 ```bash
-codex plugin marketplace add https://github.com/XIYO/sherpa.git
-codex plugin add sherpa@sherpa
+codex plugin marketplace add https://github.com/XIYO/plug-hole.git
+codex plugin add sherpa@plug-hole
 ```
 
 Open sessions keep the plugin version they loaded. Sherpa asks for macOS
