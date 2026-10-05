@@ -23,6 +23,7 @@ sherpa --help
 ```
 
 The CLI and agent skills are installed separately. Choose your host.
+Your GitHub account needs access to the private `XIYO/plug-hole` repository.
 
 For Claude Code:
 
