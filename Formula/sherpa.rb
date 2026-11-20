@@ -1,8 +1,8 @@
 class Sherpa < Formula
   desc "Local-first planning and context orchestrator for macOS"
   homepage "https://github.com/XIYO/sherpa"
-  url "https://github.com/XIYO/sherpa/releases/download/v0.8.3/sherpa-0.8.3-aarch64-apple-darwin.tar.gz"
-  sha256 "1e5e693c9de80d67185c0102b10165f611077b18cf49c7a87aafa8ee57e333ae"
+  url "https://github.com/XIYO/sherpa/releases/download/v0.8.4/sherpa-0.8.4-aarch64-apple-darwin.tar.gz"
+  sha256 "95ed57d4d85ca23c8f389709e6ea8b309e04ca91e78f20731ada8554cba2f250"
   license "MIT"
 
   depends_on arch: :arm64
