@@ -1,8 +1,8 @@
 class Sherpa < Formula
   desc "Local-first planning and context orchestrator for macOS"
   homepage "https://github.com/XIYO/sherpa"
-  url "https://github.com/XIYO/sherpa/releases/download/v0.8.1/sherpa-0.8.1-aarch64-apple-darwin.tar.gz"
-  sha256 "375b9e359f0b6dfabfd6863cce909eeaa14b3dc0067f67743879588ee0454aa9"
+  url "https://github.com/XIYO/sherpa/releases/download/v0.8.2/sherpa-0.8.2-aarch64-apple-darwin.tar.gz"
+  sha256 "4f5afb49fed4b6eb9f3ea5e39190cb4be30cf32ee1f6ba0e46b1176cb3f2b4f7"
   license "MIT"
 
   depends_on arch: :arm64
@@ -11,13 +11,14 @@ class Sherpa < Formula
 
   def install
     bin.install "bin/sherpa"
-    libexec.install "libexec/sherpa-apple"
+    libexec.install "libexec/SherpaHelper.app"
   end
 
   def caveats
     <<~EOS
-      Sherpa is installed without Developer ID or notarization.
-      macOS may ask for Calendar, Reminders, or automation permission when used.
+      The Apple helper is signed with Developer ID and is not notarized.
+      macOS asks once for Calendar, Reminders, or automation permission for
+      "Sherpa"; the grant carries over to later upgrades.
       Mail, iMessage, and KakaoTalk reads need Full Disk Access for the app that
       runs sherpa. Run "sherpa kakaotalk setup" once before reading KakaoTalk.
 
@@ -32,7 +33,8 @@ class Sherpa < Formula
     # 스킬의 버전 가드가 이 출력 형식에 기댄다. version 은 Homebrew 가 url 에서 읽은 값이다.
     assert_equal "sherpa #{version}", shell_output("#{bin}/sherpa --version").strip
     assert_match "sherpa kakaotalk archive", shell_output("#{bin}/sherpa --help")
-    assert_equal "sherpa-apple #{version}", shell_output("#{libexec}/sherpa-apple --version").strip
+    helper = libexec/"SherpaHelper.app/Contents/MacOS/sherpa-apple"
+    assert_equal "sherpa-apple #{version}", shell_output("#{helper} --version").strip
     # 코어가 설치 위치의 헬퍼를 찾아 이름 있는 오류로 끝나는지 본다.
     assert_match "protocol.invalid_envelope", pipe_output("#{bin}/sherpa planner request", "{}", 1)
   end
